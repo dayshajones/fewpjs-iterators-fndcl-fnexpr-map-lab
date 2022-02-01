@@ -12,6 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  // use the .map method on the tutorials to return a new array
-  return tutorials
+  return tutorials.map(string => upperCase(string))
+}
+
+const upperCase = (string) => {
+  let sentence = string.split(" ")
+  for(let i = 0; i < sentence.length; i++){
+    sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1)
+  }
+  return sentence.join(" ")
 }
